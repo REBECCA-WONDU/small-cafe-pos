@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GbVptpGZdFg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\wribka\\Documents\\My Projects\\5_Star_Menu app\\backend\\src\\Restaurant.Application\\Restaurant.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\wribka\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.3\\microsoft.extensions.dependencyinjection.abstractions.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

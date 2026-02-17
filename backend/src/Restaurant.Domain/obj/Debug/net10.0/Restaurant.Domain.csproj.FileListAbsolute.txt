@@ -1,0 +1,12 @@
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.deps.json
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.pdb
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.AssemblyInfoInputs.cache
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.AssemblyInfo.cs
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.csproj.CoreCompileInputs.cache
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\refint\Restaurant.Domain.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.pdb
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\ref\Restaurant.Domain.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.sourcelink.json

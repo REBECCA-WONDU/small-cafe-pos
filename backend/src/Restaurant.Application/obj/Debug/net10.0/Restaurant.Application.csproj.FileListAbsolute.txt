@@ -1,0 +1,16 @@
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\bin\Debug\net10.0\Restaurant.Application.deps.json
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\bin\Debug\net10.0\Restaurant.Application.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\bin\Debug\net10.0\Restaurant.Application.pdb
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\bin\Debug\net10.0\Restaurant.Domain.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\bin\Debug\net10.0\Restaurant.Domain.pdb
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.csproj.AssemblyReference.cache
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.AssemblyInfoInputs.cache
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.AssemblyInfo.cs
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.csproj.CoreCompileInputs.cache
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaura.8ED4ADA1.Up2Date
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\refint\Restaurant.Application.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.pdb
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\ref\Restaurant.Application.dll
+C:\Users\wribka\Documents\My Projects\5_Star_Menu app\backend\src\Restaurant.Application\obj\Debug\net10.0\Restaurant.Application.sourcelink.json
