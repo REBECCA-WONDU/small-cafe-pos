@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 24, 24, 27;
+  /* zinc-900 */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #fafafa;
+  /* zinc-50 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
