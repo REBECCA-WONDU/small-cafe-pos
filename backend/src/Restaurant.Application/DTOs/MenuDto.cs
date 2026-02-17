@@ -8,5 +8,6 @@ namespace Restaurant.Application.DTOs
         public decimal Price { get; set; }
         public string Category { get; set; } = string.Empty;
         public string? ImageUrl { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

@@ -61,6 +61,32 @@ namespace Restaurant.API.Controllers
             return BadRequest("Invalid status code");
         }
 
+        [HttpPost("{id}/items")]
+        public async Task<ActionResult<OrderDto>> AddItems(int id, [FromBody] List<OrderItemDto> items)
+        {
+            try
+            {
+                var updatedOrder = await _orderService.AddItemsToOrderAsync(id, items);
+                return Ok(updatedOrder);
+            }
+            catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("table/{tableNumber}/active")]
+        public async Task<ActionResult<OrderDto>> GetActiveOrder(string tableNumber)
+        {
+            var order = await _orderService.GetActiveOrderByTableAsync(tableNumber);
+            if (order == null) return NotFound();
+            return Ok(order);
+        }
+
         [HttpGet("revenue")]
         public async Task<ActionResult<decimal>> GetDailyRevenue([FromQuery] DateTime? date)
         {

@@ -66,6 +66,38 @@ namespace Restaurant.Application.Services
             return MapToDto(order);
         }
 
+        public async Task<OrderDto> AddItemsToOrderAsync(int orderId, List<OrderItemDto> items)
+        {
+            var order = await _orderRepository.GetByIdAsync(orderId);
+            if (order == null) throw new KeyNotFoundException($"Order with ID {orderId} not found.");
+
+            if (order.Status != OrderStatus.Pending)
+            {
+                throw new InvalidOperationException("Can only add items to pending orders.");
+            }
+
+            foreach (var itemDto in items)
+            {
+                var menuItem = await _menuRepository.GetByIdAsync(itemDto.MenuItemId);
+                if (menuItem == null) continue;
+
+                var orderItem = new OrderItem
+                {
+                    MenuItemId = menuItem.Id,
+                    MenuItemName = menuItem.Name,
+                    Price = menuItem.Price,
+                    Quantity = itemDto.Quantity,
+                    SpecialInstructions = itemDto.SpecialInstructions
+                };
+                order.OrderItems.Add(orderItem);
+            }
+
+            order.TotalPrice = order.OrderItems.Sum(i => i.Price * i.Quantity);
+            await _orderRepository.UpdateAsync(order);
+            
+            return MapToDto(order);
+        }
+
         public async Task UpdateOrderStatusAsync(int orderId, OrderStatus status)
         {
             var order = await _orderRepository.GetByIdAsync(orderId);
@@ -73,6 +105,14 @@ namespace Restaurant.Application.Services
 
             order.Status = status;
             await _orderRepository.UpdateAsync(order);
+        }
+
+        public async Task<OrderDto> GetActiveOrderByTableAsync(string tableNumber)
+        {
+            var allOrders = await _orderRepository.GetAllAsync();
+            var activeOrder = allOrders.FirstOrDefault(o => o.TableNumber == tableNumber && o.Status == OrderStatus.Pending);
+            
+            return activeOrder != null ? MapToDto(activeOrder) : null;
         }
 
         public async Task<decimal> CalculateDailyRevenueAsync(DateTime date)

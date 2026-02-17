@@ -10,7 +10,9 @@ namespace Restaurant.Application.Services
         Task<IEnumerable<OrderDto>> GetAllOrdersAsync();
         Task<OrderDto> GetOrderByIdAsync(int id);
         Task<OrderDto> CreateOrderAsync(string tableNumber, List<OrderItemDto> items, string notes);
+        Task<OrderDto> AddItemsToOrderAsync(int orderId, List<OrderItemDto> items);
         Task UpdateOrderStatusAsync(int orderId, OrderStatus status);
+        Task<OrderDto> GetActiveOrderByTableAsync(string tableNumber);
         Task<decimal> CalculateDailyRevenueAsync(DateTime date);
     }
 }

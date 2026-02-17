@@ -26,7 +26,8 @@ namespace Restaurant.Application.Services
                 Description = m.Description,
                 Price = m.Price,
                 Category = m.Category,
-                ImageUrl = m.ImageUrl
+                ImageUrl = m.ImageUrl,
+                IsAvailable = m.IsAvailable
             });
         }
 
@@ -42,7 +43,8 @@ namespace Restaurant.Application.Services
                 Description = menuItem.Description,
                 Price = menuItem.Price,
                 Category = menuItem.Category,
-                ImageUrl = menuItem.ImageUrl
+                ImageUrl = menuItem.ImageUrl,
+                IsAvailable = menuItem.IsAvailable
             };
         }
 
@@ -61,6 +63,7 @@ namespace Restaurant.Application.Services
             var createdItem = await _menuRepository.AddAsync(menuItem);
 
             menuDto.Id = createdItem.Id;
+            menuDto.IsAvailable = createdItem.IsAvailable;
             return menuDto;
         }
 
@@ -74,6 +77,7 @@ namespace Restaurant.Application.Services
             existingItem.Price = menuDto.Price;
             existingItem.Category = menuDto.Category;
             existingItem.ImageUrl = menuDto.ImageUrl;
+            existingItem.IsAvailable = menuDto.IsAvailable;
 
             await _menuRepository.UpdateAsync(existingItem);
         }
