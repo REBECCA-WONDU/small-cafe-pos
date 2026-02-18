@@ -11,6 +11,7 @@ interface MenuCardProps {
 
 export default function MenuCard({ item, onAdd }: MenuCardProps) {
     const [qty, setQty] = useState(1);
+    const [imageError, setImageError] = useState(false);
     const [isAdded, setIsAdded] = useState(false);
 
     const handleAdd = () => {
@@ -25,18 +26,19 @@ export default function MenuCard({ item, onAdd }: MenuCardProps) {
         <div className={`group relative bg-white rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl ${!item.isAvailable ? 'opacity-60' : 'shadow-md hover:-translate-y-1'}`}>
             {/* Image Section with Gradient Overlay */}
             <div className="relative h-48 overflow-hidden">
-                {item.imageUrl ? (
+                {item.imageUrl && !imageError ? (
                     <>
                         <img
                             src={item.imageUrl}
                             alt={item.name}
+                            onError={() => setImageError(true)}
                             className={`w-full h-full object-cover transition-all duration-700 ${!item.isAvailable ? 'grayscale' : 'group-hover:scale-110'}`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                     </>
                 ) : (
                     <div className="w-full h-full bg-gradient-to-br from-emerald-400 via-teal-400 to-cyan-500 flex items-center justify-center">
-                        <span className="text-white/30 text-7xl">🍽️</span>
+                        <span className="text-white/30 text-7xl">{item.category === 'Drinks' ? '🥤' : '🍽️'}</span>
                     </div>
                 )}
 

@@ -7,10 +7,10 @@ const API_Base = 'http://localhost:5146/api';
 
 const SAMPLE_MENU: MenuItem[] = [
     { id: 1, name: "Gourmet Beef Burger", description: "Juicy prime beef patty with truffle mayo, caramelised onions, and melted aged cheddar.", price: 12.50, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800&auto=format&fit=crop", isAvailable: true },
-    { id: 2, name: "Iced Caramel Macchiato", description: "Freshly pulled espresso with creamy milk and rich buttery caramel sauce over ice.", price: 4.80, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1579546302636-f09c642c676d?q=80&w=800&auto=format&fit=crop", isAvailable: true },
+    { id: 2, name: "Iced Caramel Macchiato", description: "Freshly pulled espresso with creamy milk and rich buttery caramel sauce over ice.", price: 4.80, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1558024920-b41e18820790?q=80&w=800&auto=format&fit=crop", isAvailable: true },
     { id: 3, name: "Avocado Sourdough Toast", description: "Smashed Hass avocado, chilli flakes, pumpkin seeds and two poached organic eggs.", price: 10.20, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop", isAvailable: true },
     { id: 4, name: "Tropical Dragonfruit Bowl", description: "Pitaya base topped with granola, chia seeds, fresh blueberries and raw honey.", price: 9.50, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1590301157890-4810ed352733?q=80&w=800&auto=format&fit=crop", isAvailable: true },
-    { id: 5, name: "Signature Hot Chocolate", description: "70% Dark Belgian chocolate melted into silky textured milk with toasted marshmallows.", price: 5.20, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?q=80&w=800&auto=format&fit=crop", isAvailable: true },
+    { id: 5, name: "Signature Hot Chocolate", description: "70% Dark Belgian chocolate melted into silky textured milk with toasted marshmallows.", price: 5.20, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1544781477-b62f4fd932bc?q=80&w=800&auto=format&fit=crop", isAvailable: true },
     { id: 6, name: "Crispy Korean Chicken", description: "Twice-fried chicken wings glazed in a spicy-sweet gochujang sauce with sesame.", price: 11.00, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?q=80&w=800&auto=format&fit=crop", isAvailable: false },
 ];
 
