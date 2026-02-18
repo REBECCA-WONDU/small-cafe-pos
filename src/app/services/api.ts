@@ -5,14 +5,24 @@ import { MenuItem, Order, CreateOrderDto } from '../types';
 
 const API_Base = 'http://localhost:5146/api';
 
+const SAMPLE_MENU: MenuItem[] = [
+    { id: 1, name: "Gourmet Beef Burger", description: "Juicy prime beef patty with truffle mayo, caramelised onions, and melted aged cheddar.", price: 12.50, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80", isAvailable: true },
+    { id: 2, name: "Iced Caramel Macchiato", description: "Freshly pulled espresso with creamy milk and rich buttery caramel sauce over ice.", price: 4.80, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1461023058943-07fcaf1f17e7?auto=format&fit=crop&w=800&q=80", isAvailable: true },
+    { id: 3, name: "Avocado Sourdough Toast", description: "Smashed Hass avocado, chilli flakes, pumpkin seeds and two poached organic eggs.", price: 10.20, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80", isAvailable: true },
+    { id: 4, name: "Tropical Dragonfruit Bowl", description: "Pitaya base topped with granola, chia seeds, fresh blueberries and raw honey.", price: 9.50, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80", isAvailable: true },
+    { id: 5, name: "Signature Hot Chocolate", description: "70% Dark Belgian chocolate melted into silky textured milk with toasted marshmallows.", price: 5.20, category: "Drinks", imageUrl: "https://images.unsplash.com/photo-1544781477-b62f4fd932bc?auto=format&fit=crop&w=800&q=80", isAvailable: true },
+    { id: 6, name: "Crispy Korean Chicken", description: "Twice-fried chicken wings glazed in a spicy-sweet gochujang sauce with sesame.", price: 11.00, category: "Foods", imageUrl: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=800&q=80", isAvailable: false },
+];
+
 export const getMenu = async (): Promise<MenuItem[]> => {
     try {
         const res = await fetch(`${API_Base}/menu`, { cache: 'no-store' });
         if (!res.ok) throw new Error('Failed to fetch menu');
-        return res.json();
+        const data = await res.json();
+        return data.length > 0 ? data : SAMPLE_MENU;
     } catch (error) {
-        console.error(error);
-        return [];
+        console.warn("API unreachable, showing sample menu data.");
+        return SAMPLE_MENU;
     }
 };
 
