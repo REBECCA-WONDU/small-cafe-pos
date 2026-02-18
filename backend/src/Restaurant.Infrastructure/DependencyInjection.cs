@@ -12,7 +12,7 @@ namespace Restaurant.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IMenuRepository, MenuRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
