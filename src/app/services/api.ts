@@ -17,11 +17,15 @@ const SAMPLE_MENU: MenuItem[] = [
 export const getMenu = async (): Promise<MenuItem[]> => {
     try {
         const res = await fetch(`${API_Base}/menu`, { cache: 'no-store' });
-        if (!res.ok) throw new Error('Failed to fetch menu');
-        const data = await res.json();
-        return data.length > 0 ? data : SAMPLE_MENU;
+        if (res.ok) {
+            const data = await res.json();
+            // If you have items, show them! If empty, then show samples.
+            return data.length > 0 ? data : SAMPLE_MENU;
+        }
+        return SAMPLE_MENU;
     } catch (error) {
-        console.warn("API unreachable, showing sample menu data.");
+        // This usually happens on Vercel because it can't talk to your Localhost PC
+        console.warn("Backend not found at localhost:5146. Showing sample menu for preview.");
         return SAMPLE_MENU;
     }
 };

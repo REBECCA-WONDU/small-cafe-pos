@@ -29,64 +29,63 @@ export default function Cart({ items, onRemove, onSubmit }: CartProps) {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl border border-zinc-100 overflow-hidden flex flex-col h-[calc(100vh-8rem)] sticky top-24">
-            <div className="bg-zinc-900 text-white p-6 flex items-center justify-between shadow-md z-10">
+        <div className="bg-white rounded-2xl shadow-xl border border-zinc-100 overflow-hidden flex flex-col lg:h-[calc(100vh-8rem)] lg:sticky lg:top-24">
+            <div className="bg-zinc-900 text-white p-5 md:p-6 flex items-center justify-between shadow-md z-10 shrink-0">
                 <div className="flex items-center gap-3">
                     <div className="bg-white/10 p-2 rounded-lg">
-                        <Receipt size={24} className="text-emerald-400" />
+                        <Receipt size={20} className="text-emerald-400 md:size-24" />
                     </div>
                     <div>
-                        <h2 className="text-lg font-bold leading-tight">Current Order</h2>
-                        <p className="text-white/60 text-xs font-medium">Table Service</p>
+                        <h2 className="text-base md:text-lg font-bold leading-tight">Current Order</h2>
+                        <p className="text-white/60 text-[10px] md:text-xs font-medium uppercase tracking-wider">Table Service</p>
                     </div>
                 </div>
-                <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg shadow-emerald-900/20">
+                <span className="bg-emerald-500 text-white px-2.5 py-0.5 rounded-full text-[10px] md:text-xs font-bold shadow-lg shadow-emerald-900/20">
                     {items.length} Items
                 </span>
             </div>
 
-            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-zinc-50/50">
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-zinc-50/50 min-h-[150px]">
                 {items.length === 0 ? (
-                    <div className="flex flex-col items-center justify-center h-full text-zinc-400 py-12">
-                        <div className="bg-zinc-100 p-6 rounded-full mb-4">
-                            <Utensils size={48} className="text-zinc-300" />
+                    <div className="flex flex-col items-center justify-center h-48 lg:h-full text-zinc-400 py-8">
+                        <div className="bg-zinc-100 p-5 rounded-full mb-3">
+                            <Utensils size={32} className="text-zinc-300 md:size-48" />
                         </div>
-                        <p className="font-medium text-zinc-500">Your cart is empty</p>
-                        <p className="text-xs mt-1 text-zinc-400">Add items from the menu to start</p>
+                        <p className="font-medium text-zinc-500 text-sm">Your cart is empty</p>
                     </div>
                 ) : (
                     <ul className="space-y-3">
                         {items.map((item, idx) => (
-                            <li key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-zinc-100 group hover:border-emerald-100 transition-colors">
+                            <li key={idx} className="bg-white p-3 md:p-4 rounded-xl shadow-sm border border-zinc-100 group hover:border-emerald-100 transition-colors">
                                 <div className="flex justify-between items-start mb-2">
-                                    <div>
-                                        <p className="font-bold text-zinc-800 text-sm">{item.menuItemName}</p>
+                                    <div className="flex-1 min-w-0 pr-2">
+                                        <p className="font-bold text-zinc-800 text-sm truncate">{item.menuItemName}</p>
                                         <div className="flex items-center gap-2 mt-1">
-                                            <span className="bg-zinc-100 text-zinc-600 px-2 py-0.5 rounded text-xs font-medium">
+                                            <span className="bg-zinc-100 text-zinc-600 px-1.5 py-0.5 rounded text-[10px] font-bold">
                                                 Qty: {item.quantity}
                                             </span>
                                             <span className="text-zinc-400 text-xs">×</span>
-                                            <span className="text-zinc-600 text-xs font-medium">
+                                            <span className="text-zinc-600 text-xs font-bold">
                                                 ${item.price.toFixed(2)}
                                             </span>
                                         </div>
                                     </div>
                                     <button
                                         onClick={() => onRemove(idx)}
-                                        className="text-zinc-300 hover:text-red-500 hover:bg-red-50 p-2 rounded-lg transition-all opacity-0 group-hover:opacity-100"
+                                        className="text-zinc-300 hover:text-red-500 hover:bg-red-50 p-1.5 rounded-lg transition-all lg:opacity-0 lg:group-hover:opacity-100"
                                         title="Remove item"
                                     >
                                         <Trash2 size={16} />
                                     </button>
                                 </div>
                                 {item.specialInstructions && (
-                                    <div className="text-xs text-amber-700 bg-amber-50 px-3 py-2 rounded-lg border border-amber-100/50 mt-2 flex items-start gap-2">
-                                        <ChefHat size={12} className="mt-0.5 shrink-0 opacity-50" />
+                                    <div className="text-[10px] text-amber-700 bg-amber-50 px-2 py-1.5 rounded-lg border border-amber-100/50 mt-1.5 flex items-start gap-1.5 leading-tight">
+                                        <ChefHat size={10} className="mt-0.5 shrink-0 opacity-50" />
                                         <span className="italic">{item.specialInstructions}</span>
                                     </div>
                                 )}
-                                <div className="mt-2 pt-2 border-t border-dashed border-zinc-100 text-right text-sm font-semibold text-zinc-900">
-                                    ${(item.price * item.quantity).toFixed(2)}
+                                <div className="mt-2 pt-2 border-t border-dashed border-zinc-100 text-right text-xs font-bold text-zinc-900">
+                                    Subtotal: ${(item.price * item.quantity).toFixed(2)}
                                 </div>
                             </li>
                         ))}
@@ -94,29 +93,29 @@ export default function Cart({ items, onRemove, onSubmit }: CartProps) {
                 )}
             </div>
 
-            <div className="bg-white p-6 border-t border-zinc-100 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)] z-10">
-                <div className="flex justify-between items-end mb-6">
-                    <span className="text-zinc-500 font-medium text-sm mb-1">Total Amount</span>
-                    <span className="text-3xl font-extrabold text-zinc-900 tracking-tight">
-                        {total.toFixed(2)} birr
+            <div className="bg-white p-5 md:p-6 border-t border-zinc-100 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)] z-10 shrink-0">
+                <div className="flex justify-between items-end mb-4 md:mb-6">
+                    <span className="text-zinc-500 font-medium text-xs mb-1 uppercase tracking-wider">Total Amount</span>
+                    <span className="text-2xl md:text-3xl font-black text-zinc-900 tracking-tighter">
+                        ${total.toFixed(2)}
                     </span>
                 </div>
 
-                <div className="space-y-4">
-                    <div>
+                <div className="space-y-3 md:space-y-4">
+                    <div className="relative">
                         <input
                             type="text"
                             placeholder="Table Number (e.g. 5A)"
-                            className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all placeholder:text-zinc-400 font-medium text-zinc-700"
+                            className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all placeholder:text-zinc-400 font-bold text-sm text-zinc-700"
                             value={tableNumber}
                             onChange={(e) => setTableNumber(e.target.value)}
                         />
                     </div>
                     <div>
                         <textarea
-                            placeholder="Order Notes (Optional)"
-                            rows={2}
-                            className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all placeholder:text-zinc-400 text-sm resize-none"
+                            placeholder="Add a note to the kitchen..."
+                            rows={1}
+                            className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none transition-all placeholder:text-zinc-400 text-xs resize-none font-medium"
                             value={notes}
                             onChange={(e) => setNotes(e.target.value)}
                         />
@@ -124,14 +123,14 @@ export default function Cart({ items, onRemove, onSubmit }: CartProps) {
                     <button
                         onClick={handleSubmit}
                         disabled={items.length === 0 || !tableNumber || isSubmitting}
-                        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-emerald-500/30 transition-all duration-200 transform active:scale-[0.98] flex items-center justify-center gap-2"
+                        className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-black py-4 px-6 rounded-xl shadow-lg shadow-emerald-500/30 transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center gap-2 text-sm uppercase tracking-widest"
                     >
                         {isSubmitting ? (
-                            <span className="animate-pulse">Processing...</span>
+                            <span className="animate-pulse">Placing Order...</span>
                         ) : (
                             <>
-                                <span>Complete Order</span>
-                                <Receipt size={18} />
+                                <span>Place Order</span>
+                                <Receipt size={18} strokeWidth={2.5} />
                             </>
                         )}
                     </button>

@@ -58,7 +58,7 @@ export default function MenuCard({ item, onAdd }: MenuCardProps) {
                         {item.name}
                     </h3>
                     <div className="bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-full shadow-sm shrink-0">
-                        <span className="font-bold text-sm">{item.price.toFixed(2)} birr</span>
+                        <span className="font-bold text-sm">${item.price.toFixed(2)}</span>
                     </div>
                 </div>
 
@@ -95,10 +95,10 @@ export default function MenuCard({ item, onAdd }: MenuCardProps) {
                         onClick={handleAdd}
                         disabled={!item.isAvailable}
                         className={`w-full h-11 flex items-center justify-center gap-2 rounded-xl font-bold text-sm transition-all duration-300 ${!item.isAvailable
-                                ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
-                                : isAdded
-                                    ? 'bg-gradient-to-r from-zinc-700 to-zinc-900 text-white shadow-lg scale-95'
-                                    : 'bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:scale-105 active:scale-100'
+                            ? 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
+                            : isAdded
+                                ? 'bg-gradient-to-r from-zinc-700 to-zinc-900 text-white shadow-lg scale-95'
+                                : 'bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 text-white shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/40 hover:scale-105 active:scale-100'
                             }`}
                     >
                         {!item.isAvailable ? (
